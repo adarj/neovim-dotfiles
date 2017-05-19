@@ -132,6 +132,7 @@ let g:airline_powerline_fonts = 1
 "Editor configuration
 set shiftwidth=4								"Choose the number of spaces for an auto_indentation
 set tabstop=4									"Tabulation space
+set expandtabs									"Change tabs to spaces
 set smartindent									"Copy indentation from previous line
 set smartcase									"Become case sensitive when capital letters are used
 set shiftround									"Round indent to multiple of 'shiftwidth'
