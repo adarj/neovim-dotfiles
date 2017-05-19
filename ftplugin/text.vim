@@ -1,0 +1,2 @@
+set invrelativenumber
+set invnumber
