@@ -29,10 +29,10 @@
 " Start easymotion plugin -> Leader + Leader
 "
 " Git functionality:
-" 	Jump to next hunk: <C-n>
-" 	Open Magit buffer: :Magit
-" 	Stage changes: S
-" 	Commit changes: CC
+"   Jump to next hunk: <C-n>
+"   Open Magit buffer: :Magit
+"   Stage changes: S
+"   Commit changes: CC
 "
 " Navigate to function declaration -> <C-]>
 "
@@ -47,33 +47,33 @@
 
 call plug#begin('~/.config/nvim/bundle')
 
-Plug 'MarcWeber/vim-addon-mw-utils'						"Dependency for vim-snipmate
-Plug 'tomtom/tlib_vim'									"Dependency for vim-snipmate
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }				"Dependency for unite
+Plug 'MarcWeber/vim-addon-mw-utils'                     "Dependency for vim-snipmate
+Plug 'tomtom/tlib_vim'                                  "Dependency for vim-snipmate
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }             "Dependency for unite
 
 Plug 'Yggdroot/indentLine'
-Plug 'lervag/vimtex'									"Helper functions for editing LaTeX files
-Plug 'tpope/vim-repeat'									"Improves default repeat function
-Plug 'airblade/vim-gitgutter'							"Shows git diff in gutter
-Plug 'Shougo/denite.nvim' 								"Buffer/file management
-Plug 'jreybert/vimagit'									"Makes git workflow easier
-Plug 'Lokaltog/vim-easymotion'							"Shortcut for moving around file
-Plug 'tpope/vim-surround'								"Easily add surrounding pairs
-Plug 'garbas/vim-snipmate'								"Textual snippets
-Plug 'neomake/neomake'									"Linting and make framework
-Plug 'majutsushi/tagbar'								"Shows a list of tags on the side
-Plug 'ludovicchabant/vim-gutentags'						"Uses tags to assist navigation in source files
-Plug 'scrooloose/nerdtree'								"Display files and folders
-Plug 'jmcantrell/vim-virtualenv'						"Tools for python virtual environments
+Plug 'lervag/vimtex'                                    "Helper functions for editing LaTeX files
+Plug 'tpope/vim-repeat'                                 "Improves default repeat function
+Plug 'airblade/vim-gitgutter'                           "Shows git diff in gutter
+Plug 'Shougo/denite.nvim'                               "Buffer/file management
+Plug 'jreybert/vimagit'                                 "Makes git workflow easier
+Plug 'Lokaltog/vim-easymotion'                          "Shortcut for moving around file
+Plug 'tpope/vim-surround'                               "Easily add surrounding pairs
+Plug 'garbas/vim-snipmate'                              "Textual snippets
+Plug 'neomake/neomake'                                  "Linting and make framework
+Plug 'majutsushi/tagbar'                                "Shows a list of tags on the side
+Plug 'ludovicchabant/vim-gutentags'                     "Uses tags to assist navigation in source files
+Plug 'scrooloose/nerdtree'                              "Display files and folders
+Plug 'jmcantrell/vim-virtualenv'                        "Tools for python virtual environments
 
 
 "Tab completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'
 
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}		"Auto generates config files for YCM
-Plug 'scrooloose/nerdcommenter'							"Comment helper
-Plug 'bling/vim-airline'								"Displays info at bottom of editor
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}     "Auto generates config files for YCM
+Plug 'scrooloose/nerdcommenter'                         "Comment helper
+Plug 'bling/vim-airline'                                "Displays info at bottom of editor
 
 call plug#end()
 
@@ -111,11 +111,11 @@ let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
 let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
 
 "NERDCommenter
-let g:NERDSpaceDelims = 1				"Add spaces after comment delimiters by default
-let g:NERDCompactSexyComs = 1			"Use compact syntax for prettified multi-line comments
-let g:NERDAltDelims_java = 1			"Set a language to use its alternate delimiters by default
-let g:NERDCommentEmptyLines = 1			"Allow commenting and inverting empty lines
-let g:NERDTrimTrailingWhitespace = 1	"Enable trimming of trailing whitespace when uncommenting
+let g:NERDSpaceDelims = 1               "Add spaces after comment delimiters by default
+let g:NERDCompactSexyComs = 1           "Use compact syntax for prettified multi-line comments
+let g:NERDAltDelims_java = 1            "Set a language to use its alternate delimiters by default
+let g:NERDCommentEmptyLines = 1         "Allow commenting and inverting empty lines
+let g:NERDTrimTrailingWhitespace = 1    "Enable trimming of trailing whitespace when uncommenting
 
 "vim-airline
 set laststatus=2
@@ -130,36 +130,36 @@ let g:airline_powerline_fonts = 1
 "================My Settings====================
 
 "Editor configuration
-set shiftwidth=4								"Choose the number of spaces for an auto_indentation
-set tabstop=4									"Tabulation space
-set expandtab									"Change tabs to spaces
-set smartindent									"Copy indentation from previous line
-set smartcase									"Become case sensitive when capital letters are used
-set shiftround									"Round indent to multiple of 'shiftwidth'
-set autoindent									"Align new lines with the previous line
-set ignorecase									"Case insensitive searching
-set bs=indent,eol,start							"Allow backspacing over everything in visual mode
-set nowrap										"Do not wrap text
-set hidden										"Hides buffers instead of closing them
+set shiftwidth=4                                "Choose the number of spaces for an auto_indentation
+set tabstop=4                                   "Tabulation space
+set expandtab                                   "Change tabs to spaces
+set smartindent                                 "Copy indentation from previous line
+set smartcase                                   "Become case sensitive when capital letters are used
+set shiftround                                  "Round indent to multiple of 'shiftwidth'
+set autoindent                                  "Align new lines with the previous line
+set ignorecase                                  "Case insensitive searching
+set bs=indent,eol,start                         "Allow backspacing over everything in visual mode
+set nowrap                                      "Do not wrap text
+set hidden                                      "Hides buffers instead of closing them
 set nohls
 set clipboard=unnamedplus
 set splitbelow
 set splitright
-set mouse=a										"Enables mouse support
+set mouse=a                                     "Enables mouse support
 set updatetime=250
 
 "Display settings
-set ruler										"Show poistion (in the statusline)
-set wildmenu  									"Show the choices for autocompletion and other
+set ruler                                       "Show poistion (in the statusline)
+set wildmenu                                    "Show the choices for autocompletion and other
 set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn,*.zip,*.tar,*.so,*/tmp/*,*/venv/*
-set showmode   									"If not activated
-set hlsearch   									"Highlight the searhes
-set incsearch									"Search incremently (search while typing)
-set showmatch   								"Matching the brackets
-set number										"Displays line numbers
-set numberwidth=5								"Sets the width of the number line
-set cursorline 									"Highlights the active line
-set invrelativenumber							"Displays relative line numbers
+set showmode                                    "If not activated
+set hlsearch                                    "Highlight the searhes
+set incsearch                                   "Search incremently (search while typing)
+set showmatch                                   "Matching the brackets
+set number                                      "Displays line numbers
+set numberwidth=5                               "Sets the width of the number line
+set cursorline                                  "Highlights the active line
+set invrelativenumber                           "Displays relative line numbers
 
 highlight CursorLine cterm=None ctermbg=235 ctermfg=None
 
@@ -192,11 +192,11 @@ nmap <F8> :TagbarToggle<CR>
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 "neomake
-nmap <Leader><Space>o :lopen<CR>        "open location window
-nmap <Leader><Space>c :lclose<CR>       "close location window
-nmap <Leader><Space>, :ll<CR>           "go to current error/warning
-nmap <Leader><Space>n :lnext<CR>        "next error/warning
-nmap <Leader><Space>p :lprev<CR>        "previous error/warning
+nmap <Leader><Space>o :lopen<CR>        "Open location window
+nmap <Leader><Space>c :lclose<CR>       "Close location window
+nmap <Leader><Space>, :ll<CR>           "Go to current error/warning
+nmap <Leader><Space>n :lnext<CR>        "Next error/warning
+nmap <Leader><Space>p :lprev<CR>        "Previous error/warning
 
 "Escape key
 inoremap jk <ESC>
