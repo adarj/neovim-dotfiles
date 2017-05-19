@@ -202,11 +202,11 @@ inoremap jk <ESC>
 
 "Switches between wrapped and not wrapped text (Leader - w)
 function! SwitchWrapping()
-	if &wrap
-		set nowrap
-	else
-		set wrap linebreak nolist
-	endif
+    if &wrap
+        set nowrap
+    else
+        set wrap linebreak nolist
+    endif
 endfunction
 nnoremap <silent> <Leader>w :call SwitchWrapping()<cr>
 
