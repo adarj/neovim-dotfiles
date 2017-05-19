@@ -66,7 +66,6 @@ Plug 'ludovicchabant/vim-gutentags'                     "Uses tags to assist nav
 Plug 'scrooloose/nerdtree'                              "Display files and folders
 Plug 'jmcantrell/vim-virtualenv'                        "Tools for python virtual environments
 
-
 "Tab completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'
