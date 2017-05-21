@@ -153,7 +153,6 @@ set updatetime=250
 set ruler                                       "Show poistion (in the statusline)
 set wildmenu                                    "Show the choices for autocompletion and other
 set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn,*.zip,*.tar,*.so,*/tmp/*,*/venv/*
-set showmode                                    "If not activated
 set hlsearch                                    "Highlight the searhes
 set incsearch                                   "Search incremently (search while typing)
 set showmatch                                   "Matching the brackets
