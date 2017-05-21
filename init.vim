@@ -119,6 +119,7 @@ let g:NERDTrimTrailingWhitespace = 1    "Enable trimming of trailing whitespace 
 "vim-airline
 set laststatus=2
 set statusline=0
+set noshowmode
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
