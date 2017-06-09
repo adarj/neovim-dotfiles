@@ -147,6 +147,7 @@ set splitbelow
 set splitright
 set mouse=a                                     "Enables mouse support
 set updatetime=250
+set fileencodings=iso-2022-jp,euc-jp,cp932,utf8,default,latin1
 
 "Display settings
 set ruler                                       "Show poistion (in the statusline)
