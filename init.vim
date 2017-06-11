@@ -203,7 +203,7 @@ nnoremap <leader>n :<C-u>Denite file_rec<cr>
 nnoremap <Leader>b :<C-u>Denite buffer<CR>
 
 "Tagbar
-nmap <F8> :TagbarToggle<CR>
+nmap <silent> <F8> :TagbarToggle<CR>
 
 "deoplete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
