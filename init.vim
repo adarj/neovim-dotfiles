@@ -40,6 +40,12 @@
 " Comment out line(s) (preserve nesting) -> Leader + c + n
 "
 " Format file -> :Neoformat
+"
+" Open neomake location window -> Leader + Space + o
+" Close neomake location window -> Leader + Space + c
+" Go to current error/warning -> Leader + Space + Comma
+" Go to next error/warning -> Leader + Space + n
+" Go to previous error/warning -> Leader + Space + p
 
 
 
