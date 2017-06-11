@@ -38,6 +38,8 @@
 "
 " Comment out line(s) -> Leader + c + c
 " Comment out line(s) (preserve nesting) -> Leader + c + n
+"
+" Format file -> :Neoformat
 
 
 
@@ -65,6 +67,7 @@ Plug 'majutsushi/tagbar'                                "Shows a list of tags on
 Plug 'ludovicchabant/vim-gutentags'                     "Uses tags to assist navigation in source files
 Plug 'scrooloose/nerdtree'                              "Display files and folders
 Plug 'jmcantrell/vim-virtualenv'                        "Tools for python virtual environments
+Plug 'sbdchd/neoformat'                                 "Tool for formatting code
 
 "Tab completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -107,6 +110,14 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
 let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
+
+"Neoformat
+let g:neoformat_cpp_clang_format = {
+            \ 'exe': 'clang-format',
+            \ 'args': ['-style=WebKit'],
+            \ }
+
+let g:neoformat_enabled_cpp = ['clang_format']
 
 "NERDCommenter
 let g:NERDSpaceDelims = 1               "Add spaces after comment delimiters by default
