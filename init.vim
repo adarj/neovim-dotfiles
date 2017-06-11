@@ -42,9 +42,8 @@
 " Format file -> :Neoformat
 "
 " Toggle location window -> F7
-" Go to current error/warning -> Leader + Space + Comma
-" Go to next error/warning -> Leader + Space + n
-" Go to previous error/warning -> Leader + Space + p
+" Go to next error/warning -> Alt + j
+" Go to previous error/warning -> Alt + k
 
 
 
@@ -203,12 +202,10 @@ nmap <silent> <F8> :TagbarToggle<CR>
 let g:toggle_list_no_mappings=1
 "Toggle location window
 nmap <script> <silent> <F7> :call ToggleLocationList()<CR>
-"Go to current error/warning
-nmap <Leader><Space>, :ll<CR>
 "Next error/warning
-nmap <Leader><Space>n :lnext<CR>
+nmap <silent> <M-j> <Plug>(ale_next_wrap)
 "Previous error/warning
-nmap <Leader><Space>p :lprev<CR>
+nmap <silent> <M-k> <Plug>(ale_previous_wrap)
 
 "deoplete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
