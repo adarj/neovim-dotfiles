@@ -41,8 +41,7 @@
 "
 " Format file -> :Neoformat
 "
-" Open neomake location window -> Leader + Space + o
-" Close neomake location window -> Leader + Space + c
+" Toggle neomake location window -> F7
 " Go to current error/warning -> Leader + Space + Comma
 " Go to next error/warning -> Leader + Space + n
 " Go to previous error/warning -> Leader + Space + p
@@ -69,6 +68,7 @@ Plug 'Lokaltog/vim-easymotion'                          "Shortcut for moving aro
 Plug 'tpope/vim-surround'                               "Easily add surrounding pairs
 Plug 'garbas/vim-snipmate'                              "Textual snippets
 Plug 'neomake/neomake'                                  "Linting and make framework
+Plug 'milkypostman/vim-togglelist'
 Plug 'majutsushi/tagbar'                                "Shows a list of tags on the side
 Plug 'ludovicchabant/vim-gutentags'                     "Uses tags to assist navigation in source files
 Plug 'scrooloose/nerdtree'                              "Display files and folders
@@ -208,11 +208,10 @@ nmap <F8> :TagbarToggle<CR>
 "deoplete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-"neomake
-"Open location window
-nmap <Leader><Space>o :lopen<CR>
-"Close location window
-nmap <Leader><Space>c :lclose<CR>
+"neomake + togglelist.vim
+let g:toggle_list_no_mappings="true"
+"Toggle location window
+nmap <script> <silent> <F7> :call ToggleLocationList()<CR>
 "Go to current error/warning
 nmap <Leader><Space>, :ll<CR>
 "Next error/warning
