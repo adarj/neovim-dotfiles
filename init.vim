@@ -41,7 +41,7 @@
 "
 " Format file -> :Neoformat
 "
-" Toggle neomake location window -> F7
+" Toggle location window -> F7
 " Go to current error/warning -> Leader + Space + Comma
 " Go to next error/warning -> Leader + Space + n
 " Go to previous error/warning -> Leader + Space + p
@@ -67,13 +67,13 @@ Plug 'jreybert/vimagit'                                 "Makes git workflow easi
 Plug 'Lokaltog/vim-easymotion'                          "Shortcut for moving around file
 Plug 'tpope/vim-surround'                               "Easily add surrounding pairs
 Plug 'garbas/vim-snipmate'                              "Textual snippets
-Plug 'neomake/neomake'                                  "Linting and make framework
-Plug 'milkypostman/vim-togglelist'
 Plug 'majutsushi/tagbar'                                "Shows a list of tags on the side
 Plug 'ludovicchabant/vim-gutentags'                     "Uses tags to assist navigation in source files
 Plug 'scrooloose/nerdtree'                              "Display files and folders
 Plug 'jmcantrell/vim-virtualenv'                        "Tools for python virtual environments
 Plug 'sbdchd/neoformat'                                 "Tool for formatting code
+Plug 'w0rp/ale'                                         "Asynchronous linting
+Plug 'milkypostman/vim-togglelist'                      "Toggle locatino window
 
 "Tab completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -99,12 +99,6 @@ let g:vimtex_view_method = "zathura"
 
 "vim-gitgutter
 let g:gitgutter_max_signs=10000
-
-"neomake
-autocmd! BufReadPost,BufWritePost * Neomake
-
-let g:neomake_cpp_enabled_makers = ['clang']
-let g:neomake_cpp_clang_args = ["-std=c++14", "-Wextra", "-Wall", "-fsanitize=undefined","-g"]
 
 "deoplete.nvim
 let g:deoplete#enable_at_startup=1
@@ -205,11 +199,8 @@ nnoremap <Leader>b :<C-u>Denite buffer<CR>
 "Tagbar
 nmap <silent> <F8> :TagbarToggle<CR>
 
-"deoplete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-
-"neomake + togglelist.vim
-let g:toggle_list_no_mappings="true"
+"ALE
+let g:toggle_list_no_mappings=1
 "Toggle location window
 nmap <script> <silent> <F7> :call ToggleLocationList()<CR>
 "Go to current error/warning
@@ -218,6 +209,9 @@ nmap <Leader><Space>, :ll<CR>
 nmap <Leader><Space>n :lnext<CR>
 "Previous error/warning
 nmap <Leader><Space>p :lprev<CR>
+
+"deoplete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 "Escape key
 inoremap jk <ESC>
