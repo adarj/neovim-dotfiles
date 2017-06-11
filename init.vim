@@ -203,11 +203,16 @@ nmap <F8> :TagbarToggle<CR>
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 "neomake
-nmap <Leader><Space>o :lopen<CR>        "Open location window
-nmap <Leader><Space>c :lclose<CR>       "Close location window
-nmap <Leader><Space>, :ll<CR>           "Go to current error/warning
-nmap <Leader><Space>n :lnext<CR>        "Next error/warning
-nmap <Leader><Space>p :lprev<CR>        "Previous error/warning
+"Open location window
+nmap <Leader><Space>o :lopen<CR>
+"Close location window
+nmap <Leader><Space>c :lclose<CR>
+"Go to current error/warning
+nmap <Leader><Space>, :ll<CR>
+"Next error/warning
+nmap <Leader><Space>n :lnext<CR>
+"Previous error/warning
+nmap <Leader><Space>p :lprev<CR>
 
 "Escape key
 inoremap jk <ESC>
