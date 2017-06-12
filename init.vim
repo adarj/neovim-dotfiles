@@ -74,7 +74,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'
 Plug 'Shougo/neosnippet.vim'                            "Textual snippets
 
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}     "Auto generates config files for YCM
 Plug 'scrooloose/nerdcommenter'                         "Comment helper
 Plug 'bling/vim-airline'                                "Displays info at bottom of editor
 
