@@ -44,6 +44,8 @@
 " Toggle location window -> F7
 " Go to next error/warning -> Alt + j
 " Go to previous error/warning -> Alt + k
+"
+" Neosnippet (in insert mode) -> <C-k>
 
 
 
