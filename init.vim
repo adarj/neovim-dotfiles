@@ -53,10 +53,6 @@
 
 call plug#begin('~/.config/nvim/bundle')
 
-Plug 'MarcWeber/vim-addon-mw-utils'                     "Dependency for vim-snipmate
-Plug 'tomtom/tlib_vim'                                  "Dependency for vim-snipmate
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }             "Dependency for unite
-
 Plug 'Yggdroot/indentLine'
 Plug 'lervag/vimtex'                                    "Helper functions for editing LaTeX files
 Plug 'tpope/vim-repeat'                                 "Improves default repeat function
@@ -65,7 +61,6 @@ Plug 'Shougo/denite.nvim'                               "Buffer/file management
 Plug 'jreybert/vimagit'                                 "Makes git workflow easier
 Plug 'Lokaltog/vim-easymotion'                          "Shortcut for moving around file
 Plug 'tpope/vim-surround'                               "Easily add surrounding pairs
-Plug 'garbas/vim-snipmate'                              "Textual snippets
 Plug 'majutsushi/tagbar'                                "Shows a list of tags on the side
 Plug 'ludovicchabant/vim-gutentags'                     "Uses tags to assist navigation in source files
 Plug 'scrooloose/nerdtree'                              "Display files and folders
@@ -77,6 +72,7 @@ Plug 'milkypostman/vim-togglelist'                      "Toggle locatino window
 "Tab completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'
+Plug 'Shougo/neosnippet.vim'                            "Textual snippets
 
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}     "Auto generates config files for YCM
 Plug 'scrooloose/nerdcommenter'                         "Comment helper
@@ -120,6 +116,13 @@ let g:neoformat_enabled_cpp = ['clang_format']
 
 "ALE
 let g:ale_lint_on_text_changed='normal'
+
+"Neosnippet
+let g:neosnippet#disable_runtime_snippets = {
+\   '_' : 1,
+\ }
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory='~/.config/nvim/snippets/'
 
 "NERDCommenter
 let g:NERDSpaceDelims = 1               "Add spaces after comment delimiters by default
@@ -212,6 +215,16 @@ nmap <silent> <M-k> <Plug>(ale_previous_wrap)
 
 "deoplete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+"Neosnippet
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
 
 "Escape key
 inoremap jk <ESC>
