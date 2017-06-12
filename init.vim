@@ -118,6 +118,9 @@ let g:neoformat_cpp_clang_format = {
 
 let g:neoformat_enabled_cpp = ['clang_format']
 
+"ALE
+let g:ale_lint_on_text_changed='normal'
+
 "NERDCommenter
 let g:NERDSpaceDelims = 1               "Add spaces after comment delimiters by default
 let g:NERDCompactSexyComs = 1           "Use compact syntax for prettified multi-line comments
