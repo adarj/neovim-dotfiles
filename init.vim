@@ -87,7 +87,7 @@ let g:python3_host_prog = '/usr/bin/python3'
 "indentLine
 let g:indentLine_color_term = 240
 let g:indentLine_char = '¦'
-let g:indentLine_enabled = 0
+let g:indentLine_filetype = ['c', 'cpp', 'python']
 
 "vimtex
 let g:vimtex_compiler_progname = "nvr"
