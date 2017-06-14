@@ -72,6 +72,7 @@ Plug 'w0rp/ale'                                         "Asynchronous linting
 Plug 'milkypostman/vim-togglelist'                      "Toggle locatino window
 
 "Tab completion
+Plug 'Shougo/neoinclude.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'
 Plug 'Shougo/neosnippet.vim'                            "Textual snippets
@@ -117,6 +118,8 @@ let g:neoformat_enabled_cpp = ['clang_format']
 
 "ALE
 let g:ale_lint_on_text_changed='normal'
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
 
 "Neosnippet
 let g:neosnippet#disable_runtime_snippets = {
