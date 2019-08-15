@@ -7,8 +7,6 @@
 " Next buffer -> Leader + Tab
 " Previous buffer -> Leader + p
 "
-" Enable TagBar -> F8
-"
 " Highlight current line -> Leader + l
 " Move to highlighted line -> ' + l
 " Reset highlights -> Leader + r
@@ -63,7 +61,6 @@ Plug 'Shougo/denite.nvim'                               "Buffer/file management
 Plug 'jreybert/vimagit'                                 "Makes git workflow easier
 Plug 'Lokaltog/vim-easymotion'                          "Shortcut for moving around file
 Plug 'tpope/vim-surround'                               "Easily add surrounding pairs
-Plug 'majutsushi/tagbar'                                "Shows a list of tags on the side
 Plug 'scrooloose/nerdtree'                              "Display files and folders
 Plug 'jmcantrell/vim-virtualenv'                        "Tools for python virtual environments
 Plug 'sbdchd/neoformat'                                 "Tool for formatting code
@@ -212,9 +209,6 @@ nnoremap <silent> <Leader>m :NERDTreeFocus<CR>
 "Denite.vim
 nnoremap <leader>n :<C-u>Denite file_rec<cr>
 nnoremap <Leader>b :<C-u>Denite buffer<CR>
-
-"Tagbar
-nmap <silent> <F8> :TagbarToggle<CR>
 
 "ALE
 let g:toggle_list_no_mappings=1
