@@ -64,7 +64,6 @@ Plug 'jreybert/vimagit'                                 "Makes git workflow easi
 Plug 'Lokaltog/vim-easymotion'                          "Shortcut for moving around file
 Plug 'tpope/vim-surround'                               "Easily add surrounding pairs
 Plug 'majutsushi/tagbar'                                "Shows a list of tags on the side
-Plug 'ludovicchabant/vim-gutentags'                     "Uses tags to assist navigation in source files
 Plug 'scrooloose/nerdtree'                              "Display files and folders
 Plug 'jmcantrell/vim-virtualenv'                        "Tools for python virtual environments
 Plug 'sbdchd/neoformat'                                 "Tool for formatting code
@@ -73,7 +72,16 @@ Plug 'milkypostman/vim-togglelist'                      "Toggle locatino window
 
 "Tab completion
 Plug 'Shougo/neoinclude.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
 Plug 'zchee/deoplete-clang'
 Plug 'Shougo/neosnippet.vim'                            "Textual snippets
 
