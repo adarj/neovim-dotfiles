@@ -1,2 +1,2 @@
-# My Neovim Dotfiles
+# neovim-dotfiles
 Located at ~/.config/nvim/
