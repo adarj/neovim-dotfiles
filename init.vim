@@ -54,34 +54,31 @@
 call plug#begin('~/.config/nvim/bundle')
 
 Plug 'Yggdroot/indentLine'
-Plug 'lervag/vimtex'                                    "Helper functions for editing LaTeX files
-Plug 'tpope/vim-repeat'                                 "Improves default repeat function
-Plug 'airblade/vim-gitgutter'                           "Shows git diff in gutter
-Plug 'Shougo/denite.nvim'                               "Buffer/file management
-Plug 'jreybert/vimagit'                                 "Makes git workflow easier
-Plug 'Lokaltog/vim-easymotion'                          "Shortcut for moving around file
-Plug 'tpope/vim-surround'                               "Easily add surrounding pairs
-Plug 'scrooloose/nerdtree'                              "Display files and folders
-Plug 'jmcantrell/vim-virtualenv'                        "Tools for python virtual environments
-Plug 'sbdchd/neoformat'                                 "Tool for formatting code
-Plug 'w0rp/ale'                                         "Asynchronous linting
-Plug 'milkypostman/vim-togglelist'                      "Toggle locatino window
-
-"Tab completion
-Plug 'Shougo/neoinclude.vim'
+Plug 'lervag/vimtex'                                                "Helper functions for editing LaTeX files
+Plug 'tpope/vim-repeat'                                             "Improves default repeat function
+Plug 'airblade/vim-gitgutter'                                       "Shows git diff in gutter
+Plug 'jreybert/vimagit'                                             "Makes git workflow easier
+Plug 'Lokaltog/vim-easymotion'                                      "Shortcut for moving around file
+Plug 'tpope/vim-surround'                                           "Easily add surrounding pairs
+Plug 'scrooloose/nerdtree'                                          "Display files and folders
+Plug 'jmcantrell/vim-virtualenv'                                    "Tools for python virtual environments
+Plug 'sbdchd/neoformat'                                             "Tool for formatting code
+Plug 'w0rp/ale'                                                     "Asynchronous linting
+Plug 'milkypostman/vim-togglelist'                                  "Toggle locatino window
+Plug 'Shougo/neoinclude.vim'                                        "Tab completion
 
 if has('nvim')
+  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }       "Buffer/file management
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
+  Plug 'Shougo/denite.nvim'
   Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 let g:deoplete#enable_at_startup = 1
 
-Plug 'zchee/deoplete-clang'
 Plug 'Shougo/neosnippet.vim'                            "Textual snippets
-
 Plug 'scrooloose/nerdcommenter'                         "Comment helper
 Plug 'bling/vim-airline'                                "Displays info at bottom of editor
 
@@ -109,17 +106,6 @@ if !exists('g:deoplete#omni#input_patterns')
 endif
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
-let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
-
-"Neoformat
-let g:neoformat_cpp_clang_format = {
-            \ 'exe': 'clang-format',
-            \ 'args': ['-style=WebKit'],
-            \ }
-
-let g:neoformat_enabled_cpp = ['clang_format']
 
 "ALE
 let g:ale_lint_on_text_changed='normal'
@@ -207,7 +193,22 @@ let maplocalleader="\\"
 nnoremap <silent> <Leader>m :NERDTreeFocus<CR>
 
 "Denite.vim
-nnoremap <leader>n :<C-u>Denite file_rec<cr>
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
+nnoremap <leader>n :<C-u>Denite file/rec<cr>
 nnoremap <Leader>b :<C-u>Denite buffer<CR>
 
 "ALE
