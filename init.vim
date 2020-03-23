@@ -82,7 +82,9 @@ Plug 'bling/vim-airline'                                "Displays info at bottom
 
 call plug#end()
 
-
+"Run these commands to add Python support:
+"  python2 -m pip install neovim
+"  python3 -m pip install neovim
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
